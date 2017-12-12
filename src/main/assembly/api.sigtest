@@ -5,7 +5,6 @@ CLSS public final com.dukescript.api.kt.Action
 cons public init(com.dukescript.api.kt.impl.Token)
  anno 1 org.jetbrains.annotations.NotNull(java.lang.String value="")
 supr java.lang.Object
-hfds token
 
 CLSS public com.dukescript.api.kt.Model
 cons public init(com.dukescript.api.kt.impl.Token)
@@ -69,6 +68,9 @@ meth public final static com.dukescript.api.kt.Model$Readable<com.dukescript.api
  anno 0 org.jetbrains.annotations.NotNull(java.lang.String value="")
  anno 1 org.jetbrains.annotations.NotNull(java.lang.String value="")
  anno 2 org.jetbrains.annotations.NotNull(java.lang.String value="")
+meth public final static void applyBindings(com.dukescript.api.kt.Model$Provider,java.lang.String)
+ anno 1 org.jetbrains.annotations.NotNull(java.lang.String value="")
+ anno 2 org.jetbrains.annotations.Nullable(java.lang.String value="")
 supr java.lang.Object
 
 CLSS public final com.dukescript.api.kt.Net

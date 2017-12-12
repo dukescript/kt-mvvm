@@ -192,3 +192,11 @@ public open class Model internal constructor(token : Token) {
         }
     }
 }
+
+/** Activates given [Model] in the current context.
+ * @param model class with [observable] or [computed] properties and [actions][action]
+ * @param id optional id of a UI element to apply the model to
+ */
+public fun applyBindings(model : Model.Provider, id : String? = null) {
+    Models.applyBindings(model, id)
+}
