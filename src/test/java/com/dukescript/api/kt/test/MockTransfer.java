@@ -59,7 +59,7 @@ public final class MockTransfer implements Transfer, Contexts.Provider {
     @Override
     public void loadJSON(JSONCall call) {
         String url = call.composeURL(null);
-        final String stringPrefix = "http://string/";
+        final String stringPrefix = "http://example.com/";
         if (url.startsWith(stringPrefix)) {
             call.notifySuccess(url.substring(stringPrefix.length()));
             return;

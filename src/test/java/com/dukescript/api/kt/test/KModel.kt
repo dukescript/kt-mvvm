@@ -110,7 +110,7 @@ class KModel(vararg historyItems: String) : Model.Provider {
     }
 
     fun loadFromPlain() {
-        loadJSON("http://string/Hello World!", { arr: List<String> ->
+        loadJSON("http://example.com/Hello World!", { arr: List<String> ->
             var msg = ""
             for (m in arr) {
                 msg += m
@@ -121,12 +121,12 @@ class KModel(vararg historyItems: String) : Model.Provider {
     }
 
     fun loadFromJSON() {
-        loadJSON("http://string/message=Hello World!", { arr: List<MsgModel> ->
+        loadJSON("http://example.com/message=Hello World!", { arr: List<MsgModel> ->
             message = arr[0].message
         })
     }
     fun loadFromJSONArray() {
-        loadJSON("http://string/multi=Hello&multi=World!", { arr: List<MsgModel> ->
+        loadJSON("http://example.com/multi=Hello&multi=World!", { arr: List<MsgModel> ->
             var msg = ""
             for (m in arr) {
                 val a2 = m.multi
