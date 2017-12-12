@@ -21,6 +21,15 @@ meth public final <%0 extends java.lang.Object> com.dukescript.api.kt.Model$Writ
  anno 0 org.jetbrains.annotations.NotNull(java.lang.String value="")
  anno 1 org.jetbrains.annotations.NotNull(java.lang.String value="")
  anno 3 org.jetbrains.annotations.Nullable(java.lang.String value="")
+meth public final <%0 extends java.lang.Object> void loadJSON(java.lang.Class<{%%0}>,java.lang.String,kotlin.jvm.functions.Function1<? super java.util.List<? extends {%%0}>,kotlin.Unit>,kotlin.jvm.functions.Function1<? super java.lang.Throwable,kotlin.Unit>,java.lang.String,java.lang.Object,java.util.Map<java.lang.String,java.lang.String>,java.lang.String)
+ anno 1 org.jetbrains.annotations.NotNull(java.lang.String value="")
+ anno 2 org.jetbrains.annotations.NotNull(java.lang.String value="")
+ anno 3 org.jetbrains.annotations.NotNull(java.lang.String value="")
+ anno 4 org.jetbrains.annotations.Nullable(java.lang.String value="")
+ anno 5 org.jetbrains.annotations.NotNull(java.lang.String value="")
+ anno 6 org.jetbrains.annotations.Nullable(java.lang.String value="")
+ anno 7 org.jetbrains.annotations.Nullable(java.lang.String value="")
+ anno 8 org.jetbrains.annotations.Nullable(java.lang.String value="")
 supr java.lang.Object
 
 CLSS public abstract interface static com.dukescript.api.kt.Model$Provider
@@ -71,20 +80,6 @@ meth public final static com.dukescript.api.kt.Model$Readable<com.dukescript.api
 meth public final static void applyBindings(com.dukescript.api.kt.Model$Provider,java.lang.String)
  anno 1 org.jetbrains.annotations.NotNull(java.lang.String value="")
  anno 2 org.jetbrains.annotations.Nullable(java.lang.String value="")
-supr java.lang.Object
-
-CLSS public final com.dukescript.api.kt.Net
- anno 0 kotlin.jvm.JvmName(java.lang.String name="Net")
-meth public final static <%0 extends java.lang.Object> void loadJSON(com.dukescript.api.kt.Model,java.lang.Class<{%%0}>,java.lang.String,kotlin.jvm.functions.Function1<? super java.util.List<? extends {%%0}>,kotlin.Unit>,kotlin.jvm.functions.Function1<? super java.lang.Throwable,kotlin.Unit>,java.lang.String,java.lang.Object,java.util.Map<java.lang.String,java.lang.String>,java.lang.String)
- anno 1 org.jetbrains.annotations.NotNull(java.lang.String value="")
- anno 2 org.jetbrains.annotations.NotNull(java.lang.String value="")
- anno 3 org.jetbrains.annotations.NotNull(java.lang.String value="")
- anno 4 org.jetbrains.annotations.NotNull(java.lang.String value="")
- anno 5 org.jetbrains.annotations.Nullable(java.lang.String value="")
- anno 6 org.jetbrains.annotations.NotNull(java.lang.String value="")
- anno 7 org.jetbrains.annotations.Nullable(java.lang.String value="")
- anno 8 org.jetbrains.annotations.Nullable(java.lang.String value="")
- anno 9 org.jetbrains.annotations.Nullable(java.lang.String value="")
 supr java.lang.Object
 
 CLSS public java.lang.Object

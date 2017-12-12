@@ -114,6 +114,20 @@ private class ActionProperty constructor (val action : Action) : ReadOnlyPropert
     override fun getValue(thisRef: Model.Provider, property: KProperty<*>): Action = action
 }
 
+/** Initializes an asynchronous REST connection and calls back when a result
+ * is obtained.
+ *
+ * @sample com.dukescript.api.kt.test.KModel.loadFromJSON
+ */
+inline fun <reified T> Model.Provider.loadJSON(
+    baseUrl: String, noinline onSuccess: (List<T>) -> Unit,
+    noinline onError: ((kotlin.Throwable) -> Unit)? = null,
+    method : String = "GET", data : Any? = null,
+    headers : Map<String,String>? = null, afterUrl: String? = null
+) {
+    objs.loadJSON(T::class.java, baseUrl, onSuccess, onError, method, data, headers, afterUrl)
+}
+
 /** Instantiates new [Model] associated with provided `javaObj` and
  * holding all the necessary data for communication with JavaScript.
  * If you have an object that you want to mirror in the JavaScript side,
@@ -147,6 +161,28 @@ public open class Model internal constructor(token : Token) {
             val index = ProtoType.registerPrototype(js).addProp(js.objs, true, type, prop, change = onChange)
             ListP(js.objs, prop.name, index, items)
         }
+    }
+
+    /** Helper method that is called by [com.dukescript.api.kt.loadJSON].
+     */
+    fun <T> loadJSON(
+        clazz: Class<T>,
+        baseUrl: String, onSuccess: (List<T>) -> Unit,
+        onError: ((kotlin.Throwable) -> Unit)?,
+        method : String, data : Any?,
+        headers : Map<String,String>?, afterUrl: String?
+    ) {
+        val headerText = if (headers != null) {
+            var t = ""
+            for (entry in headers.entries) {
+                t += "${entry.key}: ${entry.value}"
+            }
+            t
+        } else {
+            ""
+        }
+        var impl = this as com.dukescript.api.kt.impl.ModelImpl;
+        impl.proto.loadJSONWithHeaders(0, headerText, baseUrl, afterUrl, method, data, clazz, onSuccess, onError)
     }
 
     /** Interface to implement by objects that willing to expose its properties
