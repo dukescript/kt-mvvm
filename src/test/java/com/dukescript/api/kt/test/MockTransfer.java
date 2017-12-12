@@ -1,4 +1,4 @@
-package com.dukescript.api.kt;
+package com.dukescript.api.kt.test;
 
 /*-
  * #%L

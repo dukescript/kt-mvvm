@@ -46,14 +46,20 @@
                         <phase>pre-site</phase>
                         <goals>
                             <goal>dokka</goal>
+                            <goal>javadoc</goal>
                         </goals>
                     </execution>
                 </executions>
                 <configuration>
                     <samplesDirs>
                         <dir>src/test/</dir>
-                        <dir>src/main/java/com/</dir>
+                        <dir>src/main/java/com/dukescript/api/kt/impl/</dir>
                     </samplesDirs>
+                    <sourceRoots>
+                        <root>
+                            <path>src/main/java</path>
+                        </root>
+                    </sourceRoots>
                 </configuration>
             </plugin>
             <plugin>

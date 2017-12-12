@@ -11,8 +11,8 @@ import com.dukescript.api.kt.impl.*
 /** Defines an observable property.
 * @param initialValue inital value of the property
 * @param onChange code to invoke whenever the value of the property changes
-* @sample com.dukescript.demo.kotlindemo.KModel.message
-* @sample com.dukescript.demo.kotlindemo.KModel.rotating
+* @sample com.dukescript.api.kt.test.KModel.message
+* @sample com.dukescript.api.kt.test.KModel.rotating
 */
 inline fun <reified T> Model.Provider.observable(initialValue: T, noinline onChange: (() -> Unit)? = null): Model.Writable<T> {
     return this.objs.observable(T::class.java, initialValue, onChange);
@@ -48,8 +48,8 @@ inline fun <reified T> Model.Provider.observableList(vararg items: T, noinline o
 /** Defines derived, computed property. Its value depends
 * on other properties and is recomputed when those dependant
 * properties change.
-* @sample com.dukescript.demo.kotlindemo.KModel.message
-* @sample com.dukescript.demo.kotlindemo.KModel.words
+* @sample com.dukescript.api.kt.test.KModel.message
+* @sample com.dukescript.api.kt.test.KModel.words
 *
 */
 fun <T> Model.Provider.computed(fn : () -> T): Model.Readable<T> {
@@ -61,14 +61,14 @@ fun <T> Model.Provider.computed(fn : () -> T): Model.Readable<T> {
 
 /** Creates a handler to react on action happening
 * in the user interface.
-* @sample com.dukescript.demo.kotlindemo.KModel.rotating
-* @sample com.dukescript.demo.kotlindemo.KModel.turnAnimationOn
+* @sample com.dukescript.api.kt.test.KModel.rotating
+* @sample com.dukescript.api.kt.test.KModel.turnAnimationOn
 */
 fun Model.Provider.action(f: () -> Unit): Model.Readable<Action> {
     val fn: (Any?) -> Unit = { _ -> f() }
     return Model.Readable<Action> { js, prop ->
         ProtoType.registerPrototype(js).addFn(js.objs, prop, fn)
-        ActionProperty(Action())
+        ActionProperty(Action(Token))
     }
 }
 
@@ -76,8 +76,8 @@ fun Model.Provider.action(f: () -> Unit): Model.Readable<Action> {
 * in the user interface and provide identification of
 * the interface element that triggered the action.
 *
-* @sample com.dukescript.demo.kotlindemo.KModel.message
-* @sample com.dukescript.demo.kotlindemo.KModel.selectWord
+* @sample com.dukescript.api.kt.test.KModel.message
+* @sample com.dukescript.api.kt.test.KModel.selectWord
 *
 * @param f one argument function to handle the operation
 */
@@ -98,32 +98,41 @@ fun <T> Model.Provider.actionWithData(type: Class<T>, f: (T?) -> Unit): Model.Re
     }
     return Model.Readable<Action> { js, prop ->
         ProtoType.registerPrototype(js).addFn(js.objs, prop, fn)
-        ActionProperty(Action())
+        ActionProperty(Action(Token))
     }
 }
 
 /** Represents an operation callable from the user interface.
-* @sample com.dukescript.demo.kotlindemo.KModel.message
-* @sample com.dukescript.demo.kotlindemo.KModel.showScreenSize
-* @sample com.dukescript.demo.kotlindemo.KModel.selectWord
+* @sample com.dukescript.api.kt.test.KModel.message
+* @sample com.dukescript.api.kt.test.KModel.showScreenSize
+* @sample com.dukescript.api.kt.test.KModel.selectWord
 */
-final class Action internal constructor () {
+final class Action internal constructor (token : Token) {
 }
 
 private class ActionProperty constructor (val action : Action) : ReadOnlyProperty<Model.Provider, Action>  {
     override fun getValue(thisRef: Model.Provider, property: KProperty<*>): Action = action
 }
 
-fun Model(thiz: Model.Provider): Model = ModelImpl(thiz)
-
-/** Instantiates new [Model] associated with provided [javaObj] and
+/** Instantiates new [Model] associated with provided `javaObj` and
  * holding all the necessary data for communication with JavaScript.
  * If you have an object that you want to mirror in the JavaScript side,
- * create a class and implement [Provider] - it has just a single
+ * create a class and implement [Model.Provider] - it has just a single
  * read only property - implement it by instantiating the [Model]
  * instance with a pointer to your object.
+ *
+ * @sample com.dukescript.api.kt.test.TestData
+ */
+public fun Model(thiz: Model.Provider): Model = ModelImpl(thiz)
+
+/** Holds internal data associated with provided kotlin object. Create using
+ * the `Model` factory method:
+ *
+ * @sample com.dukescript.api.kt.test.TestData
  */
 public open class Model internal constructor(token : Token) {
+    /** Helper method. Called from [com.dukescript.api.kt.observable].
+     */
     public fun <T> observable(type: Class<T>, initialValue: T, onChange: (() -> Unit)?): Model.Writable<T> {
         return Model.Writable<T> { js: Model.Provider, prop : KProperty<*> ->
             ProtoType.registerPrototype(js).addProp(js.objs, false, type, prop, init = initialValue, change = onChange)
@@ -131,6 +140,8 @@ public open class Model internal constructor(token : Token) {
         }
     }
 
+    /** Helper method. Called from [com.dukescript.api.kt.observableList].
+     */
     public fun <T> observableList(type: Class<T>, items: Array<out T>, onChange: (() -> Unit)?): Model.Readable<MutableList<T>> {
         return Model.Readable<MutableList<T>> { js: Model.Provider, prop : KProperty<*> ->
             val index = ProtoType.registerPrototype(js).addProp(js.objs, true, type, prop, change = onChange)
@@ -138,10 +149,12 @@ public open class Model internal constructor(token : Token) {
         }
     }
 
-    /** Interface to implement by objects that you wish to expose to
-     * JavaScript. Trivial implementation can look like this:
+    /** Interface to implement by objects that willing to expose its properties
+     * (e.g. [com.dukescript.api.kt.observable], 
+     * [com.dukescript.api.kt.observableList] or [com.dukescript.api.kt.computed])
+     * as [Model]s. Trivial implementation can look like this:
      *
-     * @sample com.dukescript.demo.kotlindemo.TestData
+     * @sample com.dukescript.api.kt.test.TestData
      */
     public interface Provider {
         /** The property to fill with [Model] instance associated your
@@ -155,6 +168,8 @@ public open class Model internal constructor(token : Token) {
     public final class Writable<T> constructor (
         private val factory : (Model.Provider, KProperty<*>) -> ReadWriteProperty<Model.Provider, T>
     ) {
+        /** Creates read/write property.
+         */
         operator fun provideDelegate(
             thisRef: Model.Provider, prop: KProperty<*>
         ): ReadWriteProperty<Model.Provider, T> {
@@ -167,6 +182,8 @@ public open class Model internal constructor(token : Token) {
     public final class Readable<T> internal constructor (
         private val factory : (Model.Provider, KProperty<*>) -> ReadOnlyProperty<Model.Provider, T>
     ) {
+        /** Creates read only property.
+         */
         operator fun provideDelegate(
                 thisRef: Model.Provider,
                 prop: KProperty<*>

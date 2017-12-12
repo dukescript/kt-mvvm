@@ -2,8 +2,10 @@
 #Version 1.0-SNAPSHOT
 
 CLSS public final com.dukescript.api.kt.Action
-cons public init()
+cons public init(com.dukescript.api.kt.impl.Token)
+ anno 1 org.jetbrains.annotations.NotNull(java.lang.String value="")
 supr java.lang.Object
+hfds token
 
 CLSS public com.dukescript.api.kt.Model
 cons public init(com.dukescript.api.kt.impl.Token)
@@ -71,7 +73,7 @@ supr java.lang.Object
 
 CLSS public final com.dukescript.api.kt.Net
  anno 0 kotlin.jvm.JvmName(java.lang.String name="Net")
-meth public final static <%0 extends java.lang.Object> void loadJSON(com.dukescript.api.kt.Model$Provider,java.lang.Class<{%%0}>,java.lang.String,kotlin.jvm.functions.Function1<? super java.util.List<? extends {%%0}>,kotlin.Unit>,kotlin.jvm.functions.Function1<? super java.lang.Throwable,kotlin.Unit>,java.lang.String,java.lang.Object,java.util.Map<java.lang.String,java.lang.String>,java.lang.String)
+meth public final static <%0 extends java.lang.Object> void loadJSON(com.dukescript.api.kt.Model,java.lang.Class<{%%0}>,java.lang.String,kotlin.jvm.functions.Function1<? super java.util.List<? extends {%%0}>,kotlin.Unit>,kotlin.jvm.functions.Function1<? super java.lang.Throwable,kotlin.Unit>,java.lang.String,java.lang.Object,java.util.Map<java.lang.String,java.lang.String>,java.lang.String)
  anno 1 org.jetbrains.annotations.NotNull(java.lang.String value="")
  anno 2 org.jetbrains.annotations.NotNull(java.lang.String value="")
  anno 3 org.jetbrains.annotations.NotNull(java.lang.String value="")

@@ -1,4 +1,4 @@
-package com.dukescript.api.kt
+package com.dukescript.api.kt.test
 
 import com.dukescript.api.kt.Model
 import com.dukescript.api.kt.Action
@@ -14,9 +14,6 @@ class TestData : Model.Provider {
     override val objs = Model(this)
 
     public var value: Int by observable(0)
-
-    constructor() {
-    }
 }
 
 class KModel(vararg historyItems: String) : Model.Provider {
