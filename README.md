@@ -2,12 +2,25 @@
 
 We love Kotlin. We love MVVM. This is the result.
 
+The ViewModel:
 ```kotlin
-private class TwitterDemo: Model.Provider {
+private class HelloWorld: Model.Provider {
     override val objs = Model(this)
     var currentCustomer by observable("")
     val customers: MutableList<Tweet> by observableList()
 }
+```
+
+The View:
+```html
+ <label for="key">Enter your name: </label>
+ <input id="key" type="text" data-bind="textInput: name" placeholder="Enter your Name"/>
+  <ul class="customer-list" data-bind='foreach: customers' width='100%'>
+      <li>
+         <span data-bind="text: $data"></span> 
+      </li>
+  </ul>      
+    
 ```
 
 ## Cross platform
