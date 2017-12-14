@@ -4,23 +4,34 @@ We love Kotlin. We love MVVM. This is the result.
 
 The ViewModel:
 ```kotlin
-private class HelloWorld: Model.Provider {
+class Demo : Model.Provider {
     override val objs = Model(this)
-    var currentCustomer by observable("")
-    val customers: MutableList<Tweet> by observableList()
+
+    var newTodo by observable("")
+    val todos: MutableList<String> by observableList()
+
+    constructor (name: String, vararg todos: String) {
+        this.newTodo = name
+        this.todos += todos
+    }
+    
+    val add by action {
+        todos += newTodo
+        newTodo = ""
+    }
 }
 ```
 
 The View:
 ```html
- <label for="key">Enter your name: </label>
- <input id="key" type="text" data-bind="textInput: name" placeholder="Enter your Name"/>
-  <ul class="customer-list" data-bind='foreach: customers' width='100%'>
-      <li>
-         <span data-bind="text: $data"></span> 
-      </li>
-  </ul>      
-    
+<label for="key">Enter your name: </label>
+<input id="key" type="text" data-bind="textInput: newTodo" placeholder="Enter your Name"/>
+<button data-bind="click: add">add</button>
+<ul class="todos" data-bind='foreach: todos' width='100%'>
+    <li>
+        <span data-bind="text: $data"></span> 
+    </li>
+</ul>    
 ```
 
 ## Cross platform
