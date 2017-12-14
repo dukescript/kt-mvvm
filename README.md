@@ -10,11 +10,6 @@ class Demo : Model.Provider {
     var newTodo by observable("")
     val todos: MutableList<String> by observableList()
 
-    constructor (name: String, vararg todos: String) {
-        this.newTodo = name
-        this.todos += todos
-    }
-    
     val add by action {
         todos += newTodo
         newTodo = ""
