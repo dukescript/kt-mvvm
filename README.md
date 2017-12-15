@@ -29,6 +29,10 @@ The View:
 </ul>    
 ```
 
+Clone and try the demo [here](https://github.com/dukescript/kt-mvvm-demo).
+
+## Documentation
+
 [Here's the KDoc](./kt-mvvm/index.html)
 
 ## Cross platform
