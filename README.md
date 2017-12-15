@@ -29,6 +29,8 @@ The View:
 </ul>    
 ```
 
+[Here's the KDoc](./kt-mvvm/index.html)
+
 ## Cross platform
 
 With kotlin-mvvm you write your application once and deploy it to *desktop*, **Android**, **iOS** and *browser*.

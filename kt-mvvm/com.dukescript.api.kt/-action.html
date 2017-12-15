@@ -1,0 +1,21 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Action - kt-mvvm</title>
+<link rel="stylesheet" href="../../style.css">
+</HEAD>
+<BODY>
+<a href="../index.html">kt-mvvm</a>&nbsp;/&nbsp;<a href="index.html">com.dukescript.api.kt</a>&nbsp;/&nbsp;<a href=".">Action</a><br/>
+<br/>
+<h1>Action</h1>
+<code><span class="keyword">class </span><span class="identifier">Action</span></code>
+<p>Represents an operation callable from the user interface.</p>
+<pre><code class="lang-kotlin">public var message: String? by observable(null) {
+        messageChanges++
+    }</code></pre><pre><code class="lang-kotlin">val showScreenSize: Action by action {
+        message = "Screen size is wide"
+    }</code></pre><pre><code class="lang-kotlin">val selectWord: Action by actionWithData { word: String? -&gt;
+        message = "The word ${word} has been selected"
+    }</code></pre>
+</BODY>
+</HTML>

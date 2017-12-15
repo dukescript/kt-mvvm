@@ -1,0 +1,29 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>computed - kt-mvvm</title>
+<link rel="stylesheet" href="../../style.css">
+</HEAD>
+<BODY>
+<a href="../index.html">kt-mvvm</a>&nbsp;/&nbsp;<a href="index.html">com.dukescript.api.kt</a>&nbsp;/&nbsp;<a href=".">computed</a><br/>
+<br/>
+<h1>computed</h1>
+<a name="com.dukescript.api.kt$computed(com.dukescript.api.kt.Model.Provider, kotlin.Function0((com.dukescript.api.kt.computed.T)))"></a>
+<code><span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span> <a href="-model/-provider/index.html"><span class="identifier">Provider</span></a><span class="symbol">.</span><span class="identifier">computed</span><span class="symbol">(</span><span class="identifier" id="com.dukescript.api.kt$computed(com.dukescript.api.kt.Model.Provider, kotlin.Function0((com.dukescript.api.kt.computed.T)))/fn">fn</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<span class="identifier">T</span><span class="symbol">)</span><span class="symbol">: </span><a href="-model/-readable/index.html"><span class="identifier">Readable</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></code>
+<p>Defines derived, computed property. Its value depends
+on other properties and is recomputed when those dependant
+properties change.</p>
+<pre><code class="lang-kotlin">public var message: String? by observable(null) {
+        messageChanges++
+    }</code></pre><pre><code class="lang-kotlin">public val words: Array&lt;String&gt; by computed {
+        val arr: Array&lt;String&gt; = Array(6, { "?" })
+        val words: List&lt;String&gt; = message?.split(" ", limit = 6) ?: listOf()
+        for ((index, _) in arr.withIndex()) {
+            if (words.size &gt; index) {
+                arr[index] = words[index]
+            }
+        }
+        arr
+    }</code></pre>
+</BODY>
+</HTML>

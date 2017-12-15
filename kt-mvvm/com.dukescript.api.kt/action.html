@@ -1,0 +1,19 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>action - kt-mvvm</title>
+<link rel="stylesheet" href="../../style.css">
+</HEAD>
+<BODY>
+<a href="../index.html">kt-mvvm</a>&nbsp;/&nbsp;<a href="index.html">com.dukescript.api.kt</a>&nbsp;/&nbsp;<a href=".">action</a><br/>
+<br/>
+<h1>action</h1>
+<a name="com.dukescript.api.kt$action(com.dukescript.api.kt.Model.Provider, kotlin.Function0((kotlin.Unit)))"></a>
+<code><span class="keyword">fun </span><a href="-model/-provider/index.html"><span class="identifier">Provider</span></a><span class="symbol">.</span><span class="identifier">action</span><span class="symbol">(</span><span class="identifier" id="com.dukescript.api.kt$action(com.dukescript.api.kt.Model.Provider, kotlin.Function0((kotlin.Unit)))/f">f</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="-model/-readable/index.html"><span class="identifier">Readable</span></a><span class="symbol">&lt;</span><a href="-action.html"><span class="identifier">Action</span></a><span class="symbol">&gt;</span></code>
+<p>Creates a handler to react on action happening
+in the user interface.</p>
+<pre><code class="lang-kotlin">public var rotating: Boolean by observable(false)</code></pre><pre><code class="lang-kotlin">val turnAnimationOn: Action by action {
+        rotating = true
+    }</code></pre>
+</BODY>
+</HTML>

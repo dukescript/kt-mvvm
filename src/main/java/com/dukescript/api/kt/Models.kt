@@ -218,7 +218,7 @@ public open class Model internal constructor(token : Token) {
     public final class Readable<T> internal constructor (
         private val factory : (Model.Provider, KProperty<*>) -> ReadOnlyProperty<Model.Provider, T>
     ) {
-        /** Creates read only property.
+        /** Creates read only prperty.
          */
         operator fun provideDelegate(
                 thisRef: Model.Provider,

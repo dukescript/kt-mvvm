@@ -1,0 +1,35 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>actionWithData - kt-mvvm</title>
+<link rel="stylesheet" href="../../style.css">
+</HEAD>
+<BODY>
+<a href="../index.html">kt-mvvm</a>&nbsp;/&nbsp;<a href="index.html">com.dukescript.api.kt</a>&nbsp;/&nbsp;<a href=".">actionWithData</a><br/>
+<br/>
+<h1>actionWithData</h1>
+<a name="com.dukescript.api.kt$actionWithData(com.dukescript.api.kt.Model.Provider, kotlin.Function1((com.dukescript.api.kt.actionWithData.T, kotlin.Unit)))"></a>
+<code><span class="keyword">inline</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="keyword">reified</span>&nbsp;<span class="identifier">T</span><span class="symbol">&gt;</span> <a href="-model/-provider/index.html"><span class="identifier">Provider</span></a><span class="symbol">.</span><span class="identifier">actionWithData</span><span class="symbol">(</span><span class="keyword">noinline</span> <span class="identifier" id="com.dukescript.api.kt$actionWithData(com.dukescript.api.kt.Model.Provider, kotlin.Function1((com.dukescript.api.kt.actionWithData.T, kotlin.Unit)))/f">f</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><span class="identifier">T</span><span class="symbol">?</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="-model/-readable/index.html"><span class="identifier">Readable</span></a><span class="symbol">&lt;</span><a href="-action.html"><span class="identifier">Action</span></a><span class="symbol">&gt;</span></code>
+<p>Creates a handler to react on action happening
+in the user interface and provide identification of
+the interface element that triggered the action.</p>
+<pre><code class="lang-kotlin">public var message: String? by observable(null) {
+        messageChanges++
+    }</code></pre><pre><code class="lang-kotlin">val selectWord: Action by actionWithData { word: String? -&gt;
+        message = "The word ${word} has been selected"
+    }</code></pre>
+<h3>Parameters</h3>
+<p><a name="f"></a>
+<code>f</code> - one argument function to handle the operation</p>
+<a name="com.dukescript.api.kt$actionWithData(com.dukescript.api.kt.Model.Provider, java.lang.Class((com.dukescript.api.kt.actionWithData.T)), kotlin.Function1((com.dukescript.api.kt.actionWithData.T, kotlin.Unit)))"></a>
+<code><span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span> <a href="-model/-provider/index.html"><span class="identifier">Provider</span></a><span class="symbol">.</span><span class="identifier">actionWithData</span><span class="symbol">(</span><span class="identifier" id="com.dukescript.api.kt$actionWithData(com.dukescript.api.kt.Model.Provider, java.lang.Class((com.dukescript.api.kt.actionWithData.T)), kotlin.Function1((com.dukescript.api.kt.actionWithData.T, kotlin.Unit)))/type">type</span><span class="symbol">:</span>&nbsp;<span class="identifier">Class</span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="com.dukescript.api.kt$actionWithData(com.dukescript.api.kt.Model.Provider, java.lang.Class((com.dukescript.api.kt.actionWithData.T)), kotlin.Function1((com.dukescript.api.kt.actionWithData.T, kotlin.Unit)))/f">f</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><span class="identifier">T</span><span class="symbol">?</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="-model/-readable/index.html"><span class="identifier">Readable</span></a><span class="symbol">&lt;</span><a href="-action.html"><span class="identifier">Action</span></a><span class="symbol">&gt;</span></code>
+<p>Creates a handler to react on action happening
+in the user interface and provide identification of
+the interface element that triggered the action.</p>
+<h3>Parameters</h3>
+<p><a name="type"></a>
+<code>type</code> - the type of the interface element the function expects</p>
+<p><a name="f"></a>
+<code>f</code> - one argument function to handle the operation</p>
+</BODY>
+</HTML>

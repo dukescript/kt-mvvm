@@ -1,0 +1,125 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>com.dukescript.api.kt - kt-mvvm</title>
+<link rel="stylesheet" href="../../style.css">
+</HEAD>
+<BODY>
+<a href="../index.html">kt-mvvm</a>&nbsp;/&nbsp;<a href=".">com.dukescript.api.kt</a><br/>
+<br/>
+<h2>Package com.dukescript.api.kt</h2>
+<h3>Types</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-action.html">Action</a></p>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">Action</span></code>
+<p>Represents an operation callable from the user interface.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-model/index.html">Model</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">Model</span></code>
+<p>Holds internal data associated with provided kotlin object. Create using
+the <code>Model</code> factory method:</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-model.html">Model</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">Model</span><span class="symbol">(</span><span class="identifier" id="com.dukescript.api.kt$Model(com.dukescript.api.kt.Model.Provider)/thiz">thiz</span><span class="symbol">:</span>&nbsp;<a href="-model/-provider/index.html"><span class="identifier">Provider</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="-model/index.html"><span class="identifier">Model</span></a></code>
+<p>Instantiates new <a href="-model.html">Model</a> associated with provided <code>javaObj</code> and
+holding all the necessary data for communication with JavaScript.
+If you have an object that you want to mirror in the JavaScript side,
+create a class and implement <a href="-model/-provider/index.html">Model.Provider</a> - it has just a single
+read only property - implement it by instantiating the <a href="-model.html">Model</a>
+instance with a pointer to your object.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="action.html">action</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><a href="-model/-provider/index.html"><span class="identifier">Provider</span></a><span class="symbol">.</span><span class="identifier">action</span><span class="symbol">(</span><span class="identifier" id="com.dukescript.api.kt$action(com.dukescript.api.kt.Model.Provider, kotlin.Function0((kotlin.Unit)))/f">f</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="-model/-readable/index.html"><span class="identifier">Readable</span></a><span class="symbol">&lt;</span><a href="-action.html"><span class="identifier">Action</span></a><span class="symbol">&gt;</span></code>
+<p>Creates a handler to react on action happening
+in the user interface.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="action-with-data.html">actionWithData</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span> <a href="-model/-provider/index.html"><span class="identifier">Provider</span></a><span class="symbol">.</span><span class="identifier">actionWithData</span><span class="symbol">(</span><span class="identifier" id="com.dukescript.api.kt$actionWithData(com.dukescript.api.kt.Model.Provider, kotlin.Function1((com.dukescript.api.kt.actionWithData.T, kotlin.Unit)))/f">f</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><span class="identifier">T</span><span class="symbol">?</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="-model/-readable/index.html"><span class="identifier">Readable</span></a><span class="symbol">&lt;</span><a href="-action.html"><span class="identifier">Action</span></a><span class="symbol">&gt;</span></code><br/>
+<code><span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span> <a href="-model/-provider/index.html"><span class="identifier">Provider</span></a><span class="symbol">.</span><span class="identifier">actionWithData</span><span class="symbol">(</span><span class="identifier" id="com.dukescript.api.kt$actionWithData(com.dukescript.api.kt.Model.Provider, java.lang.Class((com.dukescript.api.kt.actionWithData.T)), kotlin.Function1((com.dukescript.api.kt.actionWithData.T, kotlin.Unit)))/type">type</span><span class="symbol">:</span>&nbsp;<span class="identifier">Class</span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="com.dukescript.api.kt$actionWithData(com.dukescript.api.kt.Model.Provider, java.lang.Class((com.dukescript.api.kt.actionWithData.T)), kotlin.Function1((com.dukescript.api.kt.actionWithData.T, kotlin.Unit)))/f">f</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><span class="identifier">T</span><span class="symbol">?</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="-model/-readable/index.html"><span class="identifier">Readable</span></a><span class="symbol">&lt;</span><a href="-action.html"><span class="identifier">Action</span></a><span class="symbol">&gt;</span></code>
+<p>Creates a handler to react on action happening
+in the user interface and provide identification of
+the interface element that triggered the action.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="apply-bindings.html">applyBindings</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">applyBindings</span><span class="symbol">(</span><span class="identifier" id="com.dukescript.api.kt$applyBindings(com.dukescript.api.kt.Model.Provider, kotlin.String)/model">model</span><span class="symbol">:</span>&nbsp;<a href="-model/-provider/index.html"><span class="identifier">Provider</span></a><span class="symbol">, </span><span class="identifier" id="com.dukescript.api.kt$applyBindings(com.dukescript.api.kt.Model.Provider, kotlin.String)/id">id</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">?</span>&nbsp;<span class="symbol">=</span>&nbsp;null<span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Activates given <a href="-model.html">Model</a> in the current context.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="computed.html">computed</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span> <a href="-model/-provider/index.html"><span class="identifier">Provider</span></a><span class="symbol">.</span><span class="identifier">computed</span><span class="symbol">(</span><span class="identifier" id="com.dukescript.api.kt$computed(com.dukescript.api.kt.Model.Provider, kotlin.Function0((com.dukescript.api.kt.computed.T)))/fn">fn</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<span class="identifier">T</span><span class="symbol">)</span><span class="symbol">: </span><a href="-model/-readable/index.html"><span class="identifier">Readable</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></code>
+<p>Defines derived, computed property. Its value depends
+on other properties and is recomputed when those dependant
+properties change.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="load-j-s-o-n.html">loadJSON</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span> <a href="-model/-provider/index.html"><span class="identifier">Provider</span></a><span class="symbol">.</span><span class="identifier">loadJSON</span><span class="symbol">(</span><span class="identifier" id="com.dukescript.api.kt$loadJSON(com.dukescript.api.kt.Model.Provider, kotlin.String, kotlin.Function1((kotlin.collections.List((com.dukescript.api.kt.loadJSON.T)), kotlin.Unit)), kotlin.Function1((kotlin.Throwable, kotlin.Unit)), kotlin.String, kotlin.Any, kotlin.collections.Map((kotlin.String, )), kotlin.String)/baseUrl">baseUrl</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="com.dukescript.api.kt$loadJSON(com.dukescript.api.kt.Model.Provider, kotlin.String, kotlin.Function1((kotlin.collections.List((com.dukescript.api.kt.loadJSON.T)), kotlin.Unit)), kotlin.Function1((kotlin.Throwable, kotlin.Unit)), kotlin.String, kotlin.Any, kotlin.collections.Map((kotlin.String, )), kotlin.String)/onSuccess">onSuccess</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><span class="identifier">List</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">, </span><span class="identifier" id="com.dukescript.api.kt$loadJSON(com.dukescript.api.kt.Model.Provider, kotlin.String, kotlin.Function1((kotlin.collections.List((com.dukescript.api.kt.loadJSON.T)), kotlin.Unit)), kotlin.Function1((kotlin.Throwable, kotlin.Unit)), kotlin.String, kotlin.Any, kotlin.collections.Map((kotlin.String, )), kotlin.String)/onError">onError</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-throwable/index.html"><span class="identifier">Throwable</span></a><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a>&nbsp;<span class="symbol">=</span>&nbsp;null<span class="symbol">, </span><span class="identifier" id="com.dukescript.api.kt$loadJSON(com.dukescript.api.kt.Model.Provider, kotlin.String, kotlin.Function1((kotlin.collections.List((com.dukescript.api.kt.loadJSON.T)), kotlin.Unit)), kotlin.Function1((kotlin.Throwable, kotlin.Unit)), kotlin.String, kotlin.Any, kotlin.collections.Map((kotlin.String, )), kotlin.String)/method">method</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a>&nbsp;<span class="symbol">=</span>&nbsp;"GET"<span class="symbol">, </span><span class="identifier" id="com.dukescript.api.kt$loadJSON(com.dukescript.api.kt.Model.Provider, kotlin.String, kotlin.Function1((kotlin.collections.List((com.dukescript.api.kt.loadJSON.T)), kotlin.Unit)), kotlin.Function1((kotlin.Throwable, kotlin.Unit)), kotlin.String, kotlin.Any, kotlin.collections.Map((kotlin.String, )), kotlin.String)/data">data</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">?</span>&nbsp;<span class="symbol">=</span>&nbsp;null<span class="symbol">, </span><span class="identifier" id="com.dukescript.api.kt$loadJSON(com.dukescript.api.kt.Model.Provider, kotlin.String, kotlin.Function1((kotlin.collections.List((com.dukescript.api.kt.loadJSON.T)), kotlin.Unit)), kotlin.Function1((kotlin.Throwable, kotlin.Unit)), kotlin.String, kotlin.Any, kotlin.collections.Map((kotlin.String, )), kotlin.String)/headers">headers</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-map/index.html"><span class="identifier">Map</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">,</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span><span class="symbol">?</span>&nbsp;<span class="symbol">=</span>&nbsp;null<span class="symbol">, </span><span class="identifier" id="com.dukescript.api.kt$loadJSON(com.dukescript.api.kt.Model.Provider, kotlin.String, kotlin.Function1((kotlin.collections.List((com.dukescript.api.kt.loadJSON.T)), kotlin.Unit)), kotlin.Function1((kotlin.Throwable, kotlin.Unit)), kotlin.String, kotlin.Any, kotlin.collections.Map((kotlin.String, )), kotlin.String)/afterUrl">afterUrl</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">?</span>&nbsp;<span class="symbol">=</span>&nbsp;null<span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Initializes an asynchronous REST connection and calls back when a result
+is obtained.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="observable.html">observable</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span> <a href="-model/-provider/index.html"><span class="identifier">Provider</span></a><span class="symbol">.</span><span class="identifier">observable</span><span class="symbol">(</span><span class="identifier" id="com.dukescript.api.kt$observable(com.dukescript.api.kt.Model.Provider, com.dukescript.api.kt.observable.T, kotlin.Function0((kotlin.Unit)))/initialValue">initialValue</span><span class="symbol">:</span>&nbsp;<span class="identifier">T</span><span class="symbol">, </span><span class="identifier" id="com.dukescript.api.kt$observable(com.dukescript.api.kt.Model.Provider, com.dukescript.api.kt.observable.T, kotlin.Function0((kotlin.Unit)))/onChange">onChange</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a>&nbsp;<span class="symbol">=</span>&nbsp;null<span class="symbol">)</span><span class="symbol">: </span><a href="-model/-writable/index.html"><span class="identifier">Writable</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></code>
+<p>Defines an observable property.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="observable-list.html">observableList</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span> <a href="-model/-provider/index.html"><span class="identifier">Provider</span></a><span class="symbol">.</span><span class="identifier">observableList</span><span class="symbol">(</span><span class="keyword">vararg</span> <span class="identifier" id="com.dukescript.api.kt$observableList(com.dukescript.api.kt.Model.Provider, kotlin.Array((com.dukescript.api.kt.observableList.T)), kotlin.Function0((kotlin.Unit)))/items">items</span><span class="symbol">:</span>&nbsp;<span class="identifier">T</span><span class="symbol">, </span><span class="identifier" id="com.dukescript.api.kt$observableList(com.dukescript.api.kt.Model.Provider, kotlin.Array((com.dukescript.api.kt.observableList.T)), kotlin.Function0((kotlin.Unit)))/onChange">onChange</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a>&nbsp;<span class="symbol">=</span>&nbsp;null<span class="symbol">)</span><span class="symbol">: </span><a href="-model/-readable/index.html"><span class="identifier">Readable</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">&gt;</span></code>
+<p>Defines an observable array property.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

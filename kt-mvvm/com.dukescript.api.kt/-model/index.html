@@ -1,0 +1,87 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Model - kt-mvvm</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">kt-mvvm</a>&nbsp;/&nbsp;<a href="../index.html">com.dukescript.api.kt</a>&nbsp;/&nbsp;<a href=".">Model</a><br/>
+<br/>
+<h1>Model</h1>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">Model</span></code>
+<p>Holds internal data associated with provided kotlin object. Create using
+the <code>Model</code> factory method:</p>
+<pre><code class="lang-kotlin">class TestData : Model.Provider {
+    override val objs = Model(this)
+
+    public var value: Int by observable(0)
+}</code></pre>
+<h3>Types</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-provider/index.html">Provider</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">Provider</span></code>
+<p>Interface to implement by objects that willing to expose its properties
+(e.g. <a href="../observable.html">com.dukescript.api.kt.observable</a>,
+<a href="../observable-list.html">com.dukescript.api.kt.observableList</a> or <a href="../computed.html">com.dukescript.api.kt.computed</a>)
+as <a href="../-model.html">Model</a>s. Trivial implementation can look like this:</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-readable/index.html">Readable</a></p>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">Readable</span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></code>
+<p>Delegate for creating read-only property.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-writable/index.html">Writable</a></p>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">Writable</span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></code>
+<p>Delegate for creating read-write property.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="load-j-s-o-n.html">loadJSON</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span> <span class="identifier">loadJSON</span><span class="symbol">(</span><span class="identifier" id="com.dukescript.api.kt.Model$loadJSON(java.lang.Class((com.dukescript.api.kt.Model.loadJSON.T)), kotlin.String, kotlin.Function1((kotlin.collections.List((com.dukescript.api.kt.Model.loadJSON.T)), kotlin.Unit)), kotlin.Function1((kotlin.Throwable, kotlin.Unit)), kotlin.String, kotlin.Any, kotlin.collections.Map((kotlin.String, )), kotlin.String)/clazz">clazz</span><span class="symbol">:</span>&nbsp;<span class="identifier">Class</span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="com.dukescript.api.kt.Model$loadJSON(java.lang.Class((com.dukescript.api.kt.Model.loadJSON.T)), kotlin.String, kotlin.Function1((kotlin.collections.List((com.dukescript.api.kt.Model.loadJSON.T)), kotlin.Unit)), kotlin.Function1((kotlin.Throwable, kotlin.Unit)), kotlin.String, kotlin.Any, kotlin.collections.Map((kotlin.String, )), kotlin.String)/baseUrl">baseUrl</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="com.dukescript.api.kt.Model$loadJSON(java.lang.Class((com.dukescript.api.kt.Model.loadJSON.T)), kotlin.String, kotlin.Function1((kotlin.collections.List((com.dukescript.api.kt.Model.loadJSON.T)), kotlin.Unit)), kotlin.Function1((kotlin.Throwable, kotlin.Unit)), kotlin.String, kotlin.Any, kotlin.collections.Map((kotlin.String, )), kotlin.String)/onSuccess">onSuccess</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><span class="identifier">List</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">, </span><span class="identifier" id="com.dukescript.api.kt.Model$loadJSON(java.lang.Class((com.dukescript.api.kt.Model.loadJSON.T)), kotlin.String, kotlin.Function1((kotlin.collections.List((com.dukescript.api.kt.Model.loadJSON.T)), kotlin.Unit)), kotlin.Function1((kotlin.Throwable, kotlin.Unit)), kotlin.String, kotlin.Any, kotlin.collections.Map((kotlin.String, )), kotlin.String)/onError">onError</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-throwable/index.html"><span class="identifier">Throwable</span></a><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">, </span><span class="identifier" id="com.dukescript.api.kt.Model$loadJSON(java.lang.Class((com.dukescript.api.kt.Model.loadJSON.T)), kotlin.String, kotlin.Function1((kotlin.collections.List((com.dukescript.api.kt.Model.loadJSON.T)), kotlin.Unit)), kotlin.Function1((kotlin.Throwable, kotlin.Unit)), kotlin.String, kotlin.Any, kotlin.collections.Map((kotlin.String, )), kotlin.String)/method">method</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="com.dukescript.api.kt.Model$loadJSON(java.lang.Class((com.dukescript.api.kt.Model.loadJSON.T)), kotlin.String, kotlin.Function1((kotlin.collections.List((com.dukescript.api.kt.Model.loadJSON.T)), kotlin.Unit)), kotlin.Function1((kotlin.Throwable, kotlin.Unit)), kotlin.String, kotlin.Any, kotlin.collections.Map((kotlin.String, )), kotlin.String)/data">data</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">?</span><span class="symbol">, </span><span class="identifier" id="com.dukescript.api.kt.Model$loadJSON(java.lang.Class((com.dukescript.api.kt.Model.loadJSON.T)), kotlin.String, kotlin.Function1((kotlin.collections.List((com.dukescript.api.kt.Model.loadJSON.T)), kotlin.Unit)), kotlin.Function1((kotlin.Throwable, kotlin.Unit)), kotlin.String, kotlin.Any, kotlin.collections.Map((kotlin.String, )), kotlin.String)/headers">headers</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-map/index.html"><span class="identifier">Map</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">,</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span><span class="symbol">?</span><span class="symbol">, </span><span class="identifier" id="com.dukescript.api.kt.Model$loadJSON(java.lang.Class((com.dukescript.api.kt.Model.loadJSON.T)), kotlin.String, kotlin.Function1((kotlin.collections.List((com.dukescript.api.kt.Model.loadJSON.T)), kotlin.Unit)), kotlin.Function1((kotlin.Throwable, kotlin.Unit)), kotlin.String, kotlin.Any, kotlin.collections.Map((kotlin.String, )), kotlin.String)/afterUrl">afterUrl</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">?</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Helper method that is called by <a href="../load-j-s-o-n.html">com.dukescript.api.kt.loadJSON</a>.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="observable.html">observable</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span> <span class="identifier">observable</span><span class="symbol">(</span><span class="identifier" id="com.dukescript.api.kt.Model$observable(java.lang.Class((com.dukescript.api.kt.Model.observable.T)), com.dukescript.api.kt.Model.observable.T, kotlin.Function0((kotlin.Unit)))/type">type</span><span class="symbol">:</span>&nbsp;<span class="identifier">Class</span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="com.dukescript.api.kt.Model$observable(java.lang.Class((com.dukescript.api.kt.Model.observable.T)), com.dukescript.api.kt.Model.observable.T, kotlin.Function0((kotlin.Unit)))/initialValue">initialValue</span><span class="symbol">:</span>&nbsp;<span class="identifier">T</span><span class="symbol">, </span><span class="identifier" id="com.dukescript.api.kt.Model$observable(java.lang.Class((com.dukescript.api.kt.Model.observable.T)), com.dukescript.api.kt.Model.observable.T, kotlin.Function0((kotlin.Unit)))/onChange">onChange</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="-writable/index.html"><span class="identifier">Writable</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></code>
+<p>Helper method. Called from <a href="../observable.html">com.dukescript.api.kt.observable</a>.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="observable-list.html">observableList</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span> <span class="identifier">observableList</span><span class="symbol">(</span><span class="identifier" id="com.dukescript.api.kt.Model$observableList(java.lang.Class((com.dukescript.api.kt.Model.observableList.T)), kotlin.Array((com.dukescript.api.kt.Model.observableList.T)), kotlin.Function0((kotlin.Unit)))/type">type</span><span class="symbol">:</span>&nbsp;<span class="identifier">Class</span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="com.dukescript.api.kt.Model$observableList(java.lang.Class((com.dukescript.api.kt.Model.observableList.T)), kotlin.Array((com.dukescript.api.kt.Model.observableList.T)), kotlin.Function0((kotlin.Unit)))/items">items</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-array/index.html"><span class="identifier">Array</span></a><span class="symbol">&lt;</span><span class="keyword">out</span>&nbsp;<span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="com.dukescript.api.kt.Model$observableList(java.lang.Class((com.dukescript.api.kt.Model.observableList.T)), kotlin.Array((com.dukescript.api.kt.Model.observableList.T)), kotlin.Function0((kotlin.Unit)))/onChange">onChange</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="-readable/index.html"><span class="identifier">Readable</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">&gt;</span></code>
+<p>Helper method. Called from <a href="../observable-list.html">com.dukescript.api.kt.observableList</a>.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

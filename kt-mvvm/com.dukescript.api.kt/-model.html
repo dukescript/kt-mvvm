@@ -1,0 +1,25 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Model - kt-mvvm</title>
+<link rel="stylesheet" href="../../style.css">
+</HEAD>
+<BODY>
+<a href="../index.html">kt-mvvm</a>&nbsp;/&nbsp;<a href="index.html">com.dukescript.api.kt</a>&nbsp;/&nbsp;<a href=".">Model</a><br/>
+<br/>
+<h1>Model</h1>
+<a name="com.dukescript.api.kt$Model(com.dukescript.api.kt.Model.Provider)"></a>
+<code><span class="keyword">fun </span><span class="identifier">Model</span><span class="symbol">(</span><span class="identifier" id="com.dukescript.api.kt$Model(com.dukescript.api.kt.Model.Provider)/thiz">thiz</span><span class="symbol">:</span>&nbsp;<a href="-model/-provider/index.html"><span class="identifier">Provider</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="-model/index.html"><span class="identifier">Model</span></a></code>
+<p>Instantiates new Model associated with provided <code>javaObj</code> and
+holding all the necessary data for communication with JavaScript.
+If you have an object that you want to mirror in the JavaScript side,
+create a class and implement <a href="-model/-provider/index.html">Model.Provider</a> - it has just a single
+read only property - implement it by instantiating the Model
+instance with a pointer to your object.</p>
+<pre><code class="lang-kotlin">class TestData : Model.Provider {
+    override val objs = Model(this)
+
+    public var value: Int by observable(0)
+}</code></pre>
+</BODY>
+</HTML>
