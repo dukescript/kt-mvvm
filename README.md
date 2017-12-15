@@ -33,7 +33,7 @@ Clone and try the demo [here](https://github.com/dukescript/kt-mvvm-demo).
 
 ## Documentation
 
-[Here's the KDoc](./kt-mvvm/index.html)
+[Here's the KDoc](./kt-mvvm/com.dukescript.api.kt/index.html)
 
 ## Cross platform
 
