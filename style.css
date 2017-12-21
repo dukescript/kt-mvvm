@@ -1,9 +1,10 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:300i,400,700);
 
 body, table {
+    background: #151515;
     padding:50px;
     font:14px/1.5 'Open Sans', "Helvetica Neue", Helvetica, Arial, sans-serif;
-    color:#555;
+    color:#eaeaea;
     font-weight:300;
     margin-left: auto;
     margin-right: auto;
@@ -11,25 +12,39 @@ body, table {
 }
 
 .keyword {
-    color:black;
+    color: #63c0f5;
     font-family:Monaco, Bitstream Vera Sans Mono, Lucida Console, Terminal;
     font-size:12px;
 }
 
 .symbol {
+    color: #eaeaea;
     font-family:Monaco, Bitstream Vera Sans Mono, Lucida Console, Terminal;
     font-size:12px;
 }
 
 .identifier {
-    color: darkblue;
+    color: #b5e853;
     font-size:12px;
     font-family:Monaco, Bitstream Vera Sans Mono, Lucida Console, Terminal;
 }
 
+
 h1, h2, h3, h4, h5, h6 {
-    color:#222;
+
     margin:0 0 20px;
+}
+
+h1{
+    color: #b5e853;
+}
+
+h2{
+    color: #666;
+}
+
+h3, h4, h5, h6 {
+    color: #eaeaea;
 }
 
 p, ul, ol, table, pre, dl {
@@ -45,7 +60,7 @@ h1 {
 }
 
 h2 {
-    color:#393939;
+    color:#b5e853;
 }
 
 h3, h4, h5, h6 {
@@ -84,18 +99,18 @@ blockquote {
 
 code, pre {
     font-family:Monaco, Bitstream Vera Sans Mono, Lucida Console, Terminal;
-    color:#333;
+    color:#eaeaea;
     font-size:12px;
 }
 
 pre {
     display: block;
-/*
-    padding:8px 8px;
-    background: #f8f8f8;
-    border-radius:5px;
-    border:1px solid #e5e5e5;
-*/
+    /*
+        padding:8px 8px;
+        background: #f8f8f8;
+        border-radius:5px;
+        border:1px solid #e5e5e5;
+    */
     overflow-x: auto;
 }
 
