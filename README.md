@@ -7,12 +7,12 @@ The ViewModel:
 class Demo : Model.Provider {
     override val objs = Model(this)
 
-    var newTodo by observable("")
+    var desc by observable("")
     val todos: MutableList<String> by observableList()
 
-    val add by action {
-        todos += newTodo
-        newTodo = ""
+    val addTodo by action {
+        todos += desc
+        desc = ""
     }
 }
 ```
@@ -20,8 +20,8 @@ class Demo : Model.Provider {
 The View:
 ```html
 <label for="key">Enter TODO: </label>
-<input id="key" type="text" data-bind="textInput: newTodo"/>
-<button data-bind="click: add">add</button>
+<input id="key" type="text" data-bind="textInput: desc"/>
+<button data-bind="click: addTodo">Add</button>
 <ul class="todos" data-bind='foreach: todos' width='100%'>
     <li>
         <span data-bind="text: $data"></span> 
