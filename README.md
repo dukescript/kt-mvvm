@@ -19,8 +19,8 @@ class Demo : Model.Provider {
 
 The View:
 ```html
-<label for="key">Enter your name: </label>
-<input id="key" type="text" data-bind="textInput: newTodo" placeholder="Enter your Name"/>
+<label for="key">Enter TODO: </label>
+<input id="key" type="text" data-bind="textInput: newTodo"/>
 <button data-bind="click: add">add</button>
 <ul class="todos" data-bind='foreach: todos' width='100%'>
     <li>
