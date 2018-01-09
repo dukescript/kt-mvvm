@@ -19,10 +19,10 @@ class Demo : Model.Provider {
 
 The View:
 ```html
-<label for="key">Enter TODO: </label>
+<label for="key">New Todo:</label>
 <input id="key" type="text" data-bind="textInput: desc"/>
 <button data-bind="click: addTodo">Add</button>
-<ul class="todos" data-bind='foreach: todos' width='100%'>
+<ul class="todos" data-bind='foreach: todos'>
     <li>
         <span data-bind="text: $data"></span> 
     </li>
