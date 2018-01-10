@@ -1,5 +1,6 @@
 #!/bin/bash
 ROOT=`pwd`
+REPO=https://github.com/dukescript/kotlin-mvvm.git
 
 set -e
 
@@ -7,8 +8,8 @@ rm -rf target/
 git clone . target/kotlin-mvvm/
 rm -rf kt-mvvm/
 cd target/kotlin-mvvm/
-git checkout master
-git pull
+git fetch $REPO master
+git checkout -f FETCH_HEAD -B master
 mvn dokka:dokka
 
 cd $ROOT
