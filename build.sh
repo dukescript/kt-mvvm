@@ -1,6 +1,7 @@
 #!/bin/bash
 ROOT=`pwd`
 
+rm -rf target/
 git clone . target/kotlin-mvvm/
 rm -rf kt-mvvm/
 cd target/kotlin-mvvm/
