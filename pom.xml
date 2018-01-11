@@ -107,7 +107,7 @@
                         </root>
                     </sourceRoots>
                     <includes>
-                        <file>README.md</file>
+                        <file>src/main/java/kt-mvvm.md</file>
                     </includes>
                 </configuration>
             </plugin>
