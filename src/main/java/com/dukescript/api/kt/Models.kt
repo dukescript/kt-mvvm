@@ -128,9 +128,10 @@ inline fun <reified T> Model.Provider.loadJSON(
     objs.loadJSON(T::class.java, baseUrl, onSuccess, onError, method, data, headers, afterUrl)
 }
 
-/** Instantiates new [Model] associated with provided `javaObj` and
- * holding all the necessary data for communication with JavaScript.
- * If you have an object that you want to mirror in the JavaScript side,
+/** Instantiates new [Model] associated with provided `thiz` object.
+ * The model holds all necessary data for communication with *JavaScript*
+ * (or any other) implementation.
+ * If you have an object that you want to mirror in the *other* side,
  * create a class and implement [Model.Provider] - it has just a single
  * read only property - implement it by instantiating the [Model]
  * instance with a pointer to your object.
