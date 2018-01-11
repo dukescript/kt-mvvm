@@ -41,9 +41,9 @@
         </license>
     </licenses>
     <scm>
-        <connection>scm:git:https://github.com/dukescript/dukescript-kt.git</connection>
-        <url>https://github.com/dukescript/dukescript-kt.git</url>
-        <developerConnection>scm:git:https://github.com/dukescript/dukescript-kt.git</developerConnection>
+        <connection>scm:git:https://github.com/dukescript/kt-mvvm.git</connection>
+        <url>https://github.com/dukescript/kt-mvvm.git</url>
+        <developerConnection>scm:git:https://github.com/dukescript/kt-mvvm.git</developerConnection>
         <tag>release-${releaseVersion}</tag>
     </scm>
     <pluginRepositories>
