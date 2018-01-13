@@ -29,7 +29,17 @@ The View:
 </ul>    
 ```
 
-Clone and try the demo [here](https://github.com/dukescript/kt-mvvm-demo).
+## Getting Started
+
+Clone and try the demo [here](https://github.com/dukescript/kt-mvvm-demo):
+```bash
+$ git clone https://github.com/dukescript/kt-mvvm-demo.git yourprj
+$ cd yourprj
+$ mvn package exec:exec
+```
+then edit the application logic in `src/main/java/com/kt/mvvm/demo/Demo.kt`
+or the view in `src/main/webapp/pages/index.html`. 
+Run the `mvn package exec:exec` again to see your changes.
 
 ## Documentation
 
