@@ -33,12 +33,23 @@ Clone and try the demo [here](https://github.com/dukescript/kt-mvvm-demo).
 
 ## Documentation
 
-[Here's the KDoc](./kt-mvvm/com.dukescript.api.kt/index.html)
+Use [observable](./kt-mvvm/com.dukescript.api.kt/observable.html), 
+[observableList](./kt-mvvm/com.dukescript.api.kt/observable-list.html)
+and [computed](./kt-mvvm/com.dukescript.api.kt/computed.html) functions to define intrinsic 
+well connected properties that together form [model(s)](./kt-mvvm/com.dukescript.api.kt/-model.html)
+for your user interface, network communication, etc. Use
+[action](./kt-mvvm/com.dukescript.api.kt/action.html)/[actionWithData](./kt-mvvm/com.dukescript.api.kt/action-with-data.html) to
+define handlers of interactions arriving from the user interface, network or elsewhere.
+
+Get the overall picture at the [KDoc](./kt-mvvm/com.dukescript.api.kt/index.html) for
+the whole [Kotlin MVVM API](./kt-mvvm/com.dukescript.api.kt/index.html).
 
 ## Cross platform
 
-With kotlin-mvvm you write your application once and deploy it to *desktop*, **Android**, **iOS** and *browser*.
+With kotlin-mvvm you write your application once and deploy it to *desktop*, **Android**, **iOS** and *browser*
+with the help of [portable presenters](https://github.com/dukescript/dukescript-presenters#readme).
 
 ## Connected Applications
 
-kotlin-mvvm offers really smooth integration with REST backends.
+kotlin-mvvm offers really smooth integration with REST backends - see
+[loadJSON](./kt-mvvm/com.dukescript.api.kt/load-j-s-o-n.html) for more details.
