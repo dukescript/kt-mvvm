@@ -31,15 +31,23 @@ The View:
 
 ## Getting Started
 
-Clone and try the demo [here](https://github.com/dukescript/kt-mvvm-demo):
+Clone the demo [repository](https://github.com/dukescript/kt-mvvm-demo)
+to give **Kotlin** and **MVVM** a try:
 ```bash
-$ git clone https://github.com/dukescript/kt-mvvm-demo.git yourprj
-$ cd yourprj
+$ git clone https://github.com/dukescript/kt-mvvm-demo.git
+$ cd kt-mvvm-demo
 $ mvn package exec:exec
 ```
-then edit the application logic in `src/main/java/com/kt/mvvm/demo/Demo.kt`
-or the view in `src/main/webapp/pages/index.html`. 
-Run the `mvn package exec:exec` again to see your changes.
+then edit the application logic or the application UI as
+```bash
+$ open src/main/java/com/kt/mvvm/demo/Demo.kt
+$ open src/main/webapp/pages/index.html
+```
+and build and execute your application again to see outcome of your changes:
+```bash
+$ mvn package exec:exec
+```
+Repeat until your application becomes as slick as needed!
 
 ## Documentation
 
