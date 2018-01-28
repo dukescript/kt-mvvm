@@ -36,7 +36,7 @@ to give **Kotlin** and **MVVM** a try:
 ```bash
 $ git clone https://github.com/dukescript/kt-mvvm-demo.git
 $ cd kt-mvvm-demo
-$ mvn package exec:exec
+$ ./gradlew run # or: mvn package exec:exec
 ```
 then edit the application logic or the application UI as
 ```bash
@@ -45,6 +45,8 @@ $ open src/main/webapp/pages/index.html
 ```
 and build and execute your application again to see outcome of your changes:
 ```bash
+$ ./gradlew run
+# or if you want to use Maven invoke:
 $ mvn package exec:exec
 ```
 Repeat until your application becomes as slick as needed!
