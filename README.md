@@ -24,9 +24,9 @@ The View:
 <button data-bind="click: addTodo">Add</button>
 <ul class="todos" data-bind='foreach: todos'>
     <li>
-        <span data-bind="text: $data"></span> 
+        <span data-bind="text: $data"></span>
     </li>
-</ul>    
+</ul>
 ```
 
 ## Getting Started
@@ -53,9 +53,9 @@ Repeat until your application becomes as slick as needed!
 
 ## Documentation
 
-Use [observable](./kt-mvvm/com.dukescript.api.kt/observable.html), 
+Use [observable](./kt-mvvm/com.dukescript.api.kt/observable.html),
 [observableList](./kt-mvvm/com.dukescript.api.kt/observable-list.html)
-and [computed](./kt-mvvm/com.dukescript.api.kt/computed.html) functions to define intrinsic 
+and [computed](./kt-mvvm/com.dukescript.api.kt/computed.html) functions to define intrinsic
 well connected properties that together form [model(s)](./kt-mvvm/com.dukescript.api.kt/-model.html)
 for your user interface, network communication, etc. Use
 [action](./kt-mvvm/com.dukescript.api.kt/action.html)/[actionWithData](./kt-mvvm/com.dukescript.api.kt/action-with-data.html) to
@@ -66,10 +66,25 @@ the whole [Kotlin MVVM API](./kt-mvvm/com.dukescript.api.kt/index.html).
 
 ## Cross platform
 
-With kotlin-mvvm you write your application once and deploy it to *desktop*, **Android**, **iOS** and *browser*
+With `kt-mvvm` you write your application once and deploy it to *desktop*, **Android**, **iOS** and *browser*
 with the help of [portable presenters](https://github.com/dukescript/dukescript-presenters#readme).
 
 ## Connected Applications
 
-kotlin-mvvm offers really smooth integration with REST backends - see
+`kt-mvvm` offers really smooth integration with REST backends - see
 [loadJSON](./kt-mvvm/com.dukescript.api.kt/load-j-s-o-n.html) for more details.
+
+## License
+
+The `kt-mvvm` API is [licensed](https://github.com/dukescript/kt-mvvm/blob/master/LICENSE.md)
+under *Apache 2.0* license. The default **JavaFX WebView** based
+[presenter](https://github.com/apache/incubator-netbeans-html4j/#readme)
+comes directly from an [Apache project](https://github.com/apache/incubator-netbeans-html4j/).
+As such one can have fully functional system covered by benevolent *Apache license*.
+
+[Alternative presenters](https://github.com/dukescript/dukescript-presenters#readme)
+or [rendering environments](https://github.com/jtulach/bck2brwsr) come with their
+own licensing terms.
+
+Commercial support for the overall ecosystem is available via the
+[DukeScript project](http://dukescript.com/#support) channels.
