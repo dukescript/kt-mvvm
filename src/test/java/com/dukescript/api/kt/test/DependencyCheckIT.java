@@ -49,6 +49,15 @@ public class DependencyCheckIT {
             if ("test".equals(scope)) {
                 continue;
             }
+            if ("provided".equals(scope) && "org.jetbrains".equals(groupId)) {
+                assertEquals("annotations", artifactId);
+                continue;
+            }
+            if ("runtime".equals(scope)) {
+                assertEquals("org.netbeans.html", groupId);
+                assertEquals("ko4j", artifactId);
+                continue;
+            }
             if (!"org.netbeans.html".equals(groupId)) {
                 assertEquals("org.jetbrains.kotlin", groupId);
                 assertEquals("kotlin-stdlib-jre7", artifactId);
