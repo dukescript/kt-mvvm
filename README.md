@@ -71,9 +71,9 @@ with the help of [portable presenters](https://github.com/dukescript/dukescript-
 
 ### Android
 
-The project comes with an `installDebug` task
-to package your application as an Android `.apk` file and deploy it
-to your device or simulator:
+The [sample project](https://github.com/dukescript/kt-mvvm-demo) comes
+with classical Android Gradle `installDebug` task to package your application
+as an Android `.apk` file and deploy it to your device or simulator:
 ```bash
 $ ANDROID_HOME=/android-sdk/ ./gradlew installDebug
 $ ls app/build/outputs/apk/
@@ -83,7 +83,8 @@ app-debug.apk
 
 ### iOS
 
-One can package the same application for **iOS** with the help of Intel's
+One can package the [same code](https://github.com/dukescript/kt-mvvm-demo)
+as an **iOS** `.ipa` file with the help of Intel's
 [Multi OS Engine](https://multi-os-engine.org/) when running on Mac OS X.
 First of all list your simulators and then use one of them to launch your 
 application:
@@ -99,13 +100,14 @@ $ ./gradlew moeLaunch -Pmoe.launcher.simulators=DD9904B6-76CD-4F2D-9153-EC718287
 
 ### Browser
 
-The same application can also be transpiled to JavaScript and executed in
+The [same application](https://github.com/dukescript/kt-mvvm-demo)
+can also be transpiled to JavaScript and executed in
 the browser. The `bck2brwsrShow` tasks generates necessary `.js` files and
 launches a browser with the application
 ```bash
 $ ./gradlew bck2brwsrShow
 ...
-Showing http://localhost:13452/index.html
+Showing http://localhost:53241/index.html
 ...
 $ ls -l web/build/web/
 bck2brwsr.js
@@ -115,14 +117,14 @@ lib
 main.js
 ```
 The files in `web/build/web` directory
-contain everything needed to execute your application and can be
+contain everything needed to execute your application and as such they can be
 deployed to any HTTP server as a static content.
 Read [more](https://github.com/jtulach/bck2brwsr/blob/master/docs/GRADLE.md).
 
 ![Kt-Mvvm-Demo in the browser](firefox.png)
 
 With [Kotlin MVVM API](./kt-mvvm/com.dukescript.api.kt/index.html)
-you can write your code once and deploy everywhere
+you can write your code once, deploy and display it everywhere
 (*desktop* - `gradlew run`, *Android* - `gradlew installDebug`,
 *iOS* - `gradlew moeLaunch`, *browser* - `gradlew bck2brwsrShow`) while
 using the power of **Kotlin**, its libraries and any other *JVM libraries*
