@@ -150,4 +150,4 @@ own licensing terms.
 Commercial support for the overall ecosystem is available via the
 [DukeScript project](http://dukescript.com/#support) channels.
 
-[bindings](bindings/bindings.md)
+[bindings](/bindings/bindings.md)
