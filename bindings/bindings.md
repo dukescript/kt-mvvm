@@ -1,4 +1,4 @@
-##Bindings
+## Bindings
 
 [kt-mvvm](../README.md) implements the MVVM-pattern using declarative bindings 
 in the view. Whenever the viewmodel changes, the bound parts view will update accordingly.
