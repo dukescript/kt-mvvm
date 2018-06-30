@@ -64,6 +64,8 @@ define handlers of interactions arriving from the user interface, network or els
 Get the overall picture at the [KDoc](./kt-mvvm/com.dukescript.api.kt/index.html) for
 the whole [Kotlin MVVM API](./kt-mvvm/com.dukescript.api.kt/index.html).
 
+Our bindings for the HTML-based view are documented [here](/bindings/bindings.md).
+
 ## Cross platform
 
 With `kt-mvvm` you write your application once and deploy it to *desktop*, [Android](android.md) , [iOS](ios.md) and [browser](browser.md)
@@ -89,4 +91,3 @@ own licensing terms.
 Commercial support for the overall ecosystem is available via the
 [DukeScript project](http://dukescript.com/#support) channels.
 
-[bindings](/bindings/bindings.md)
