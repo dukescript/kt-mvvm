@@ -2,7 +2,7 @@
 
 With [kt-mvvm](README.md) [your application](https://github.com/dukescript/kt-mvvm-demo)
 can be transpiled to JavaScript and executed in
-the browser. The `bck2brwsrShow` tasks generates necessary `.js` files and
+the browser. The `bck2brwsrShow` task generates necessary `.js` files and
 launches a browser with the application
 ```bash
 $ ./gradlew bck2brwsrShow
