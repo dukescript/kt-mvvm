@@ -17,7 +17,7 @@
         <exec.debug.arg>-Ddebug=false</exec.debug.arg>
         <net.java.html.version>1.5.1</net.java.html.version>
         <junit.browser.version>1.0</junit.browser.version>
-        <kotlin.version>1.2.0</kotlin.version>
+        <kotlin.version>1.7.10</kotlin.version>
     </properties>
     <developers>
         <developer>
@@ -156,7 +156,7 @@
                 </executions>
                 <configuration>
                     <moduleName>kt-mvvm</moduleName>
-                    <jvmTarget>1.6</jvmTarget>
+                    <jvmTarget>1.8</jvmTarget>
                 </configuration>
             </plugin>
             <plugin>
@@ -215,7 +215,7 @@
             <plugin>
                 <groupId>org.netbeans.tools</groupId>
                 <artifactId>sigtest-maven-plugin</artifactId>
-                <version>1.0</version>
+                <version>1.6</version>
                 <executions>
                     <execution>
                         <goals>
@@ -280,7 +280,7 @@
         </dependency>
         <dependency>
             <groupId>org.jetbrains.kotlin</groupId>
-            <artifactId>kotlin-stdlib-jre7</artifactId>
+            <artifactId>kotlin-stdlib</artifactId>
             <version>${kotlin.version}</version>
             <scope>provided</scope>
         </dependency>
@@ -347,6 +347,20 @@
                     </plugin>
                 </plugins>
             </build>
+        </profile>
+        <profile>
+            <id>openjdk</id>
+            <activation>
+                <jdk>[11,)</jdk>
+            </activation>
+            <dependencies>
+                <dependency>
+                    <groupId>org.openjfx</groupId>
+                    <artifactId>javafx-web</artifactId>
+                    <version>11</version>
+                    <scope>test</scope>
+                </dependency>
+            </dependencies>
         </profile>
     </profiles>
 </project>
