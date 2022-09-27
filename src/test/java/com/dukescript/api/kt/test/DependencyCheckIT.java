@@ -60,7 +60,7 @@ public class DependencyCheckIT {
             }
             if (!"org.netbeans.html".equals(groupId)) {
                 assertEquals("org.jetbrains.kotlin", groupId);
-                assertEquals("kotlin-stdlib-jre7", artifactId);
+                assertEquals("kotlin-stdlib", artifactId);
                 continue;
             }
             cnt++;
